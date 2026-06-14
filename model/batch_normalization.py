@@ -22,10 +22,8 @@ class Solution:
         if training:
             batch_mean = np.mean(x, axis=0)
             batch_var = np.var(x, axis=0)
-            print(batch_mean, batch_var)
             x_hat = (x - batch_mean) / np.sqrt(batch_var + eps)
             y = gamma * x_hat + beta
-            print(y)
 
             running_mean = ((1 - momentum) * np.array(running_mean)) + (batch_mean * momentum)
             running_var = ((1 - momentum) * np.array(running_var) + (batch_var * momentum))
