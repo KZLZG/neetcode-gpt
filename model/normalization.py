@@ -13,7 +13,7 @@ class Solution:
         # return np.round(your_answer, 5)
         mu = x.mean()
         print(mu)
-        sigma = ((x - mu)**2).mean()
+        sigma = x.var() # ((x - mu)**2).mean()
         print(sigma)
         answer = ((x - mu) * gamma) / np.sqrt(sigma + 1e-5) + beta
         print(answer)
